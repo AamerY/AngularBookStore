@@ -1,0 +1,7 @@
+
+<app-book-item
+  *ngFor="let book of books_list"
+  [book]="book"
+  (onDeleteBook)="deleteBook(book)"
+  (onToggleReminder)="toggleStock(book)"
+></app-book-item>
