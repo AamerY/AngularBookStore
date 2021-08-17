@@ -10,7 +10,7 @@ import { Book } from '../../Book';
 export class BookItemComponent implements OnInit {
   @Input() book: Book={title:'',price:'',stock:false};
   @Output() onDeleteBook: EventEmitter<Book> = new EventEmitter();
-  @Output() onToggleReminder: EventEmitter<Book> = new EventEmitter();
+  @Output() onToggleStock: EventEmitter<Book> = new EventEmitter();
   
   constructor() {
    
@@ -25,7 +25,7 @@ export class BookItemComponent implements OnInit {
   }
 
   onToggle(book:Book) {
-    this.onToggleReminder.emit(book);
+    this.onToggleStock.emit(book);
   }
 }
 
