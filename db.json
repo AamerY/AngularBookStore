@@ -1,12 +1,6 @@
 {
   "books": [
     {
-      "title": "full stack",
-      "price": "100",
-      "stock": true,
-      "id": 10
-    },
-    {
       "title": "react",
       "price": "200",
       "stock": false,

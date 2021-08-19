@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BOOKS } from 'src/app/mock-books';
-
+import { BookService } from '../../services/book.service';
 import { Book } from '../../Book';
 
 @Component({
@@ -9,17 +9,28 @@ import { Book } from '../../Book';
   styleUrls: ['./books-list.component.css'],
 })
 export class BooksListComponent implements OnInit {
-  books_list: Book[] = BOOKS;
+  books: Book[] = [];
 
-  constructor() {}
+  constructor(private bookService: BookService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.bookService.getBooks().subscribe((books) => (this.books = books));
+  }
 
-  deleteBook(book: Book) {}
+  deleteBook(book: Book) {
+    this.bookService
+      .deleteBook(book)
+      .subscribe(
+        () => (this.books = this.books.filter((t) => t.id !== book.id))
+      );
+  }
 
   toggleStock(book: Book) {
     book.stock = !book.stock;
+    this.bookService.updateBookStock(book).subscribe();
   }
 
-  addBook(book: Book) {}
+  addBook(book: Book) {
+    this.bookService.addBook(book).subscribe((book) => this.books.push(book));
+  }
 }
