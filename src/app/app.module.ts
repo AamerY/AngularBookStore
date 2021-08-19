@@ -13,6 +13,9 @@ import { BooksListComponent } from './components/books-list/books-list.component
 import { BookItemComponent } from './components/book-item/book-item.component';
 import { FormComponent } from './components/form/form.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,7 @@ import { FormComponent } from './components/form/form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

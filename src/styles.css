@@ -24,34 +24,7 @@ body {
   padding: 30px;
   border-radius: 5px;
 }
-.btn {
-  display: inline-block;
-  background:green;
-  color: rgb(255, 255, 255);
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
-}
-.btn:focus {
-  outline: none;
-}
-.btn:active {
-  transform: scale(0.98);
-}
 
-.btn-block {
-  display: block;
-  width: 100%;
-}
-.btn-block:hover {
-  background: #4753ff;
-  color: white;
-}
 
 .form-control {
   margin: 5px 0;
