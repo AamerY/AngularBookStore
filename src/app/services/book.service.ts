@@ -13,6 +13,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class BookService {
+  //tested with json server
   private apiUrl = 'http://localhost:3000/books';
 
   constructor(private http: HttpClient) {}

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BOOKS } from 'src/app/mock-books';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../Book';
 

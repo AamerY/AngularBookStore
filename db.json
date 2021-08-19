@@ -3,7 +3,7 @@
     {
       "title": "react",
       "price": "200",
-      "stock": false,
+      "stock": true,
       "id": 11
     },
     {
@@ -15,8 +15,14 @@
     {
       "title": "typescript",
       "price": "34",
-      "stock": true,
+      "stock": false,
       "id": 13
+    },
+    {
+      "title": "adf",
+      "price": "adf",
+      "stock": true,
+      "id": 14
     }
   ]
 }
