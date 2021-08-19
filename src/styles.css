@@ -24,7 +24,11 @@ body {
   padding: 30px;
   border-radius: 5px;
 }
-
+.book-list {
+ 
+  height: 700px;
+  overflow-y: scroll;
+}
 
 .form-control {
   margin: 5px 0;
@@ -44,7 +48,7 @@ body {
 
 .form-control-check {
   display: flex;
-  align-items:left ;
+  align-items: left;
   justify-content: space-between;
 }
 
@@ -57,4 +61,3 @@ body {
   flex: 1;
   height: 25px;
 }
-
