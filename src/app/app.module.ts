@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -13,9 +10,6 @@ import { BooksListComponent } from './components/books-list/books-list.component
 import { BookItemComponent } from './components/book-item/book-item.component';
 import { FormComponent } from './components/form/form.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +17,10 @@ import { FormComponent } from './components/form/form.component';
     HeaderComponent,
     BooksListComponent,
     BookItemComponent,
-    FormComponent
+    FormComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

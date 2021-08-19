@@ -1,31 +1,28 @@
 <form *ngIf="showForm" class="add-form" (ngSubmit)="onSubmit()">
-    <div class="form-control">
-      <label for="book">Book</label>
-      <input
-        type="text"
-        name="title"
-        [(ngModel)]="title"
-        id="title"
-        placeholder="Add Book Tiltle"
-      />
-    </div>
-    <div class="form-control">
-      <label for="price">Price$</label>
-      <input
-        type="text"
-        name="price"
-        [(ngModel)]="price"
-        id="price"
-        placeholder="Add Price$"
-      />
-     
-    </div>
-    <div class="form-control form-control-check">
-      <label for="stock">In stock</label>
-      <input type="checkbox" name="stock" [(ngModel)]="stock" id="stock" />
-    </div>
+  <div class="form-control">
+    <label for="book">Book</label>
+    <input
+      type="text"
+      name="title"
+      [(ngModel)]="title"
+      id="title"
+      placeholder="Add Book Tiltle"
+    />
+  </div>
+  <div class="form-control">
+    <label for="price">Price$</label>
+    <input
+      type="text"
+      name="price"
+      [(ngModel)]="price"
+      id="price"
+      placeholder="Add Price$"
+    />
+  </div>
+  <div class="form-control form-control-check">
+    <label for="stock">In stock</label>
+    <input type="checkbox" name="stock" [(ngModel)]="stock" id="stock" />
+  </div>
 
-    <app-button color="green" text="Save"></app-button>
-   
-  </form>
-  
+  <app-button color="green" text="Save"></app-button>
+</form>
