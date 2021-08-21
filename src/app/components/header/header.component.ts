@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { FormService } from '../../services/form.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnDestroy {
   showForm: boolean = true;
   subscription: Subscription;
 
-  constructor(private formService: FormService) {
+  constructor(private formService: FormService, private router: Router) {
     this.subscription = this.formService
       .onToggle()
       .subscribe((value: any) => (this.showForm = value));
@@ -25,5 +26,9 @@ export class HeaderComponent implements OnDestroy {
 
   toggleForm() {
     this.formService.toggleForm();
+  }
+  hasRoute(route: string) {
+    console.log(this.router.url)
+    return this.router.url===route;
   }
 }
