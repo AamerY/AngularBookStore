@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
 import { BookItemComponent } from './components/book-item/book-item.component';
 import { FormComponent } from './components/form/form.component';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +19,11 @@ import { FormComponent } from './components/form/form.component';
     BooksListComponent,
     BookItemComponent,
     FormComponent,
+    BookDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}

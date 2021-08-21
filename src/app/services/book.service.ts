@@ -25,12 +25,19 @@ export class BookService {
     return this.http.get<Book[]>(this.apiUrl);
   }
 
+  getBook(id: number): Observable<Book> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Book>(url);
+  }
+
+  
+
   deleteBook(book: Book): Observable<Book> {
     const url = `${this.apiUrl}/${book.id}`;
     return this.http.delete<Book>(url);
   }
 
-  updateBookStock(book: Book): Observable<Book> {
+  updateBook(book: Book): Observable<Book> {
     const url = `${this.apiUrl}/${book.id}`;
     return this.http.put<Book>(url, book, httpOptions);
   }

@@ -26,7 +26,7 @@ export class BooksListComponent implements OnInit {
 
   toggleStock(book: Book) {
     book.stock = !book.stock;
-    this.bookService.updateBookStock(book).subscribe();
+    this.bookService.updateBook(book).subscribe();
   }
 
   addBook(book: Book) {
