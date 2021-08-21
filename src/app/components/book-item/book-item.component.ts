@@ -14,7 +14,9 @@ export class BookItemComponent {
   constructor() {}
 
   onDelete(book: Book) {
-    this.onDeleteBook.emit(book);
+    if (confirm('Are you sure to delete this item ')) {
+      console.log(this.onDeleteBook.emit(book));
+    }
   }
 
   onToggle(book: Book) {

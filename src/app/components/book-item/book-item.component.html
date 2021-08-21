@@ -1,8 +1,7 @@
 <div [ngClass]="{ stock: book.stock }" class="book" (dblclick)="onToggle(book)">
   <h3>
     {{ book.title }}
-
+    <p>{{ book.price }}$</p>
     <app-button color="red" text="Rmove" (click)="onDelete(book)"></app-button>
   </h3>
-  <p>{{ book.price }}$</p>
 </div>

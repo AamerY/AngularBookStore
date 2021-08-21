@@ -27,7 +27,7 @@ body {
 .book-list {
  
   height: 700px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .form-control {

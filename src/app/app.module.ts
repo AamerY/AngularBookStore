@@ -10,7 +10,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
 import { BookItemComponent } from './components/book-item/book-item.component';
 import { FormComponent } from './components/form/form.component';
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,9 +1,8 @@
 .btn {
-  display: inline-block;
   background: green;
   color: rgb(255, 255, 255);
   border: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
@@ -15,14 +14,14 @@
   outline: none;
 }
 .btn:active {
-  transform: scale(0.98);
+  transform: scale(0.90);
 }
 
-.btn-block {
+.btn {
   display: block;
   width: 100%;
 }
-.btn-block:hover {
+.btn:hover {
   background: #4753ff;
   color: white;
 }
