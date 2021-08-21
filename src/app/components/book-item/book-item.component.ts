@@ -31,11 +31,10 @@ export class BookItemComponent {
 
   onToggle(book: Book) {
     this.onToggleStock.emit(book);
-    
   }
 
   onBookToggle(book: Book) {
-    
-    this.bookService.toggleBook();
+    // this.bookService.toggleBook();
+    this.showdetails = !this.showdetails;
   }
 }

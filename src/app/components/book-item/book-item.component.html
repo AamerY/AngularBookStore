@@ -1,7 +1,7 @@
 <div [ngClass]="{ stock: book.stock }" class="book">
   <h3 (dblclick)=onBookToggle(book)>
    
-    <a  routerLink="/detail/{{book.id}}">{{book.title}}</a>
+    <a  routerLink="/detail/{{book.id}}">{{book.title| uppercase}}</a>
     <app-button color="red" text="Rmove" (click)="onDelete(book)"></app-button>
   </h3>
 

@@ -19,9 +19,9 @@
       "id": 15
     },
     {
-      "title": "fb ",
-      "price": "f ",
-      "stock": false,
+      "title": "fb 5yh",
+      "price": "f t4y",
+      "stock": true,
       "id": 16
     },
     {
@@ -29,30 +29,6 @@
       "price": "rg ",
       "stock": true,
       "id": 17
-    },
-    {
-      "title": "rg ",
-      "price": "rg ",
-      "stock": true,
-      "id": 18
-    },
-    {
-      "title": "rgb",
-      "price": "r ",
-      "stock": true,
-      "id": 19
-    },
-    {
-      "title": "rg ",
-      "price": "rg ",
-      "stock": true,
-      "id": 20
-    },
-    {
-      "title": "rg ",
-      "price": "r ",
-      "stock": true,
-      "id": 21
     }
   ]
 }
