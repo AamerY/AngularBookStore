@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable,Subject } from 'rxjs';
 import { Book } from '../Book';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,6 +16,8 @@ const httpOptions = {
 export class BookService {
   //tested with json server
   private apiUrl = 'http://localhost:3000/books';
+  private showDetails: boolean = false;
+  private subject = new Subject<any>();
 
   constructor(private http: HttpClient) {}
 
@@ -34,5 +37,15 @@ export class BookService {
 
   addBook(book: Book): Observable<Book> {
     return this.http.post<Book>(this.apiUrl, book, httpOptions);
+  }
+
+  toggleBook(): void {
+    this.showDetails = !this.showDetails;
+    //pass new value of showForm
+    this.subject.next(this.showDetails);
+  }
+
+  onToggle(): Observable<any> {
+    return this.subject.asObservable();
   }
 }

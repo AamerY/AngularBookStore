@@ -1,15 +1,9 @@
 {
   "books": [
     {
-      "title": "nextjs",
-      "price": "50",
-      "stock": true,
-      "id": 12
-    },
-    {
       "title": "typescript",
       "price": "34",
-      "stock": false,
+      "stock": true,
       "id": 13
     },
     {
