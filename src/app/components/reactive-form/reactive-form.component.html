@@ -1,0 +1,26 @@
+<form
+  *ngIf="showForm"
+  class="add-form"
+  [formGroup]="profileForm"
+  (ngSubmit)="onSubmit()"
+ 
+>
+ <div class="form-control">
+  <label for="title">Book Title: </label>
+  <input id="title" type="text" formControlName="title" placeholder="Add Book Tiltle" />
+</div>
+<div class="form-control">
+  <label for="price">Price$: </label>
+  <input id="price" type="text" formControlName="price"  placeholder="Add Price$"/>
+</div>
+   <div class="form-control form-control-check">
+    <label for="stock">In stock</label>
+    <input type="checkbox" name="stock" formControlName="stock" id="stock" />
+  </div>
+
+
+
+
+ <app-button color="green" text="Save" ></app-button>
+
+</form>
