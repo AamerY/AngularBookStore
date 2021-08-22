@@ -3,7 +3,7 @@
   color: rgb(255, 255, 255);
   border: none;
   padding: 10px 10px;
-  margin: 5px;
+  margin: 0px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
@@ -14,7 +14,7 @@
   outline: none;
 }
 .btn:active {
-  transform: scale(0.90);
+  transform: scale(0.9);
 }
 
 .btn {

@@ -1,12 +1,9 @@
 <app-form (onAddBook)="addBook($event)"></app-form>
 <div class="book-list">
-<app-book-item 
-  *ngFor="let book of books"
-  [book]="book"
-  (onDeleteBook)="deleteBook(book)"
-  (onToggleStock)="toggleStock(book)"
-  
-></app-book-item>
-
+  <app-book-item
+    *ngFor="let book of books"
+    [book]="book"
+    (onDeleteBook)="deleteBook(book)"
+    (onToggleStock)="toggleStock(book)"
+  ></app-book-item>
 </div>
-

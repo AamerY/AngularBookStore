@@ -28,7 +28,7 @@ export class HeaderComponent implements OnDestroy {
     this.formService.toggleForm();
   }
   hasRoute(route: string) {
-    console.log(this.router.url)
-    return this.router.url===route;
+    console.log(this.router.url);
+    return this.router.url === route;
   }
 }

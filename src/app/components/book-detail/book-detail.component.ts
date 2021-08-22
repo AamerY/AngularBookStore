@@ -1,8 +1,7 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Book } from '../../Book';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
 
 import { BookService } from '../../services/book.service';
 @Component({
