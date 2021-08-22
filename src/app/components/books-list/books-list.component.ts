@@ -30,6 +30,6 @@ export class BooksListComponent implements OnInit {
   }
 
   addBook(book: Book) {
-    this.bookService.addBook(book).subscribe((book) => this.books.push(book));
+    this.bookService.addBook(book).subscribe((book) => this.books=[...this.books,book]);
   }
 }

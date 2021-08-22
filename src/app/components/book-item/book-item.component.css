@@ -10,7 +10,8 @@
   border-left: 9px solid green;
 }
 h3 {
-  width: 300px;
+  width: 295px;
+  text-align: center;
 }
 .book div {
   display: flex;
@@ -19,5 +20,5 @@ h3 {
 }
 
 div {
-  border-radius: 5px;
+  border-radius: 0px;
 }

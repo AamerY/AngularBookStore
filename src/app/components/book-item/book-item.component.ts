@@ -1,4 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnDestroy,
+} from '@angular/core';
 import { Book } from '../../Book';
 import { Subscription } from 'rxjs';
 import { BookService } from '../../services/book.service';
@@ -7,7 +13,7 @@ import { BookService } from '../../services/book.service';
   templateUrl: './book-item.component.html',
   styleUrls: ['./book-item.component.css'],
 })
-export class BookItemComponent {
+export class BookItemComponent implements OnDestroy {
   showdetails: boolean = false;
   @Input() book: Book = { title: '', price: '', stock: false };
   @Output() onDeleteBook: EventEmitter<Book> = new EventEmitter();
@@ -19,6 +25,11 @@ export class BookItemComponent {
     this.subscription = this.bookService
       .onToggle()
       .subscribe((value: any) => (this.showdetails = value));
+  }
+
+  ngOnDestroy() {
+    // Unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
   }
 
   onDelete(book: Book) {

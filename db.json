@@ -1,28 +1,82 @@
 {
   "books": [
     {
-      "title": "typescript56",
-      "price": "34",
+      "title": "Angulaר",
+      "price": "100967",
+      "stock": false,
+      "id": 1
+    },
+    {
+      "title": "react",
+      "price": "50",
+      "stock": true,
+      "id": 2
+    },
+    {
+      "title": "javascript",
+      "price": "100",
+      "stock": true,
+      "id": 3
+    },
+    {
+      "title": "typescript",
+      "price": "50",
+      "stock": true,
+      "id": 4
+    },
+    {
+      "title": "css",
+      "price": "120",
+      "stock": true,
+      "id": 5
+    },
+    {
+      "title": "html",
+      "price": "90",
+      "stock": true,
+      "id": 6
+    },
+    {
+      "title": "nodejs",
+      "price": "40",
+      "stock": true,
+      "id": 7
+    },
+    {
+      "title": "nestjs",
+      "price": "100",
+      "stock": true,
+      "id": 8
+    },
+    {
+      "title": "SQL",
+      "price": "60",
+      "stock": true,
+      "id": 9
+    },
+    {
+      "title": "ad",
+      "price": "sdv",
+      "stock": true,
+      "id": 10
+    },
+    {
+      "title": "sdv",
+      "price": "qdfb",
+      "stock": true,
+      "id": 11
+    },
+    {
+      "title": "344555",
+      "price": "5555",
+      "stock": true,
+      "id": 12
+    },
+    {
+      "title": "aamer",
+      "price": "98",
       "stock": true,
       "id": 13
-    },
-    {
-      "title": "edc345347537",
-      "price": "dec",
-      "stock": true,
-      "id": 15
-    },
-    {
-      "title": "fb 5yh",
-      "price": "f t4y",
-      "stock": true,
-      "id": 16
-    },
-    {
-      "title": "hgnyhn",
-      "price": "thnum",
-      "stock": false,
-      "id": 18
     }
   ]
 }

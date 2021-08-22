@@ -29,7 +29,7 @@ export class FormComponent implements OnDestroy {
 
   onSubmit() {
     if (!this.title) {
-      alert('Please add a book!');
+      alert('Please add a book title!');
       return;
     }
 
