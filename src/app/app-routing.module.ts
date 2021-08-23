@@ -11,9 +11,8 @@ const routes: Routes = [
   { path: 'books', component: BooksListComponent },
 ];
 
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

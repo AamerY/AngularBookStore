@@ -48,7 +48,7 @@ export class BookItemComponent {
   }
 
   open(content: any) {
-    this.modalService.open(ModalPopupComponent).result.then(
+    const modalRef = this.modalService.open(ModalPopupComponent).result.then(
       (result) => {
         this.closeResult = `Closed with: ${result}`;
         this.onDelete(this.book);

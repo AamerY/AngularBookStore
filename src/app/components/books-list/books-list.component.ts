@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../Book';
+import { ModalPopupShowComponent } from '../../modal-popup-show/modal-popup-show.component';
+import {
+  NgbModal,
+  ModalDismissReasons,
+  NgbModalOptions,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-books-list',
@@ -10,7 +16,10 @@ import { Book } from '../../Book';
 export class BooksListComponent implements OnInit {
   books: Book[] = [];
 
-  constructor(private bookService: BookService) {}
+  constructor(
+    private bookService: BookService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
     this.bookService.getBooks().subscribe((books) => (this.books = books));
@@ -30,6 +39,26 @@ export class BooksListComponent implements OnInit {
   }
 
   addBook(book: Book) {
-    this.bookService.addBook(book).subscribe((book) => this.books=[...this.books,book]);
+    // if (this.books.find(book.title))
+    const found = this.books.find((element) => element.title === book.title);
+    if (found) {
+      const modalRef = this.modalService.open(ModalPopupShowComponent);
+      modalRef.componentInstance.my_modal_title =
+        book.title + ' already exists in the Store';
+      modalRef.componentInstance.my_modal_content =
+        'item will not added to the Store';
+      return;
+    } else {
+      this.bookService
+        .addBook(book)
+        .subscribe((book) => (this.books = [...this.books, book]));
+
+      const modalRef = this.modalService.open(ModalPopupShowComponent);
+      modalRef.componentInstance.my_modal_title =
+        book.title + ' added successfully';
+      modalRef.componentInstance.my_modal_content =
+        book.title + ' Price =' + book.price + '$';
+      return;
+    }
   }
 }

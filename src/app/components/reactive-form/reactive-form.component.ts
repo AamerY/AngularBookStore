@@ -50,11 +50,9 @@ export class ReactiveFormComponent implements OnDestroy {
   onSubmit() {
     this.submitted = true;
 
-    const modalRef = this.modalService.open(ModalPopupShowComponent);
-
     if (this.profileForm.invalid) {
-      modalRef.componentInstance.my_modal_title =
-        'Input Invalid!';
+      const modalRef = this.modalService.open(ModalPopupShowComponent);
+      modalRef.componentInstance.my_modal_title = 'Input Invalid!';
       modalRef.componentInstance.my_modal_content =
         'Please add a book title and price!';
       return;
