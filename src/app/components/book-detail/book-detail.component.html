@@ -1,15 +1,15 @@
 <div *ngIf="book">
-  <h2>{{ book.title | uppercase }} Details</h2>
-  <div><span>id: </span>{{ book.id }}</div>
-  <div >
+  <h2>Edit {{ book.title | uppercase }} </h2>
+  <div class="form"><span>id: </span>{{ book.id }}</div>
+  <div class="form">
     <label for="book">Book</label>
     <input  [(ngModel)]="book.title" id="title" placeholder="Add Book Tiltle" />
   </div>
-  <div >
+  <div class="form">
     <label for="price">Price$</label>
     <input name="price" [(ngModel)]="book.price" placeholder="Add Price$" />
   </div>
-  <div >
+  <div class="form form-check" >
     <label for="stock">In stock</label>
     <input type="checkbox" [(ngModel)]="book.stock" />
   </div>

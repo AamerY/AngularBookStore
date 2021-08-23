@@ -71,7 +71,7 @@ export class BookItemComponent {
 
   showPoUpDetails() {
     const modalRef = this.modalService.open(ModalPopupShowComponent);
-    modalRef.componentInstance.my_modal_title = 'Book Title ' + this.book.title;
+    modalRef.componentInstance.my_modal_title = this.book.title + ' Details';
     modalRef.componentInstance.my_modal_content =
       'Price= ' + this.book.price + '$';
   }
