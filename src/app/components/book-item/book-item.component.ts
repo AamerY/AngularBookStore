@@ -22,11 +22,10 @@ import {
 })
 export class BookItemComponent implements OnDestroy {
   showdetails: boolean = false;
-  title = 'appBootstrap';
+  title = 'ModalPopupComponent';
 
   closeResult: any;
   closeModal: string = '';
- 
 
   @Input() book: Book = { title: '', price: '', stock: false };
   @Output() onDeleteBook: EventEmitter<Book> = new EventEmitter();
@@ -49,10 +48,10 @@ export class BookItemComponent implements OnDestroy {
   }
 
   onDelete(book: Book) {
-    if (confirm('Are you sure to delete this item ')) {
-      console.log(this.onDeleteBook.emit(book));
+   
+      this.onDeleteBook.emit(book);
     }
-  }
+  
 
   onEdit(book: Book) {}
 
@@ -65,10 +64,16 @@ export class BookItemComponent implements OnDestroy {
     this.showdetails = !this.showdetails;
   }
 
-  open() {
-    const modalRef = this.modalService.open(ModalPopupComponent);
-    modalRef.componentInstance.my_modal_title = 'I your title';
-    modalRef.componentInstance.my_modal_content = 'I am your content';
+  open(content: any) {
+    this.modalService.open(ModalPopupComponent).result.then(
+      (result) => {
+        this.closeResult = `Closed with: ${result}`;
+        this.onDelete(this.book);
+      },
+      (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      }
+    );
   }
 
   private getDismissReason(reason: any): string {
@@ -80,6 +85,22 @@ export class BookItemComponent implements OnDestroy {
       return `with: ${reason}`;
     }
   }
+
+  // open() {
+  //   const modalRef = this.modalService.open(ModalPopupComponent);
+  //   modalRef.componentInstance.my_modal_title = 'I your title';
+  //   modalRef.componentInstance.my_modal_content = 'I am your content';
+  // }
+
+  // private getDismissReason(reason: any): string {
+  //   if (reason === ModalDismissReasons.ESC) {
+  //     return 'by pressing ESC';
+  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+  //     return 'by clicking on a backdrop';
+  //   } else {
+  //     return `with: ${reason}`;
+  //   }
+  // }
 
   // open(content: any) {
   //   this.modalService
