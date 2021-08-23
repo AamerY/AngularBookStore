@@ -18,8 +18,8 @@ export class ReactiveFormComponent implements OnDestroy {
   subscription: Subscription;
 
   profileForm = new FormGroup({
-    title: new FormControl('title', Validators.required),
-    price: new FormControl('price', Validators.required),
+    title: new FormControl('', Validators.required),
+    price: new FormControl('', Validators.required),
     stock: new FormControl(true),
   });
   constructor(private formService: FormService) {

@@ -6,7 +6,7 @@
       text="Edit"
       routerLink="/detail/{{ book.id }}"
     ></app-button>
-    <app-button color="red" text="Rmove" (click)="onDelete(book)"></app-button>
+    <app-button color="red" text="Rmove" (click)="open()"></app-button>
   </div>
 
   <p *ngIf="showdetails">price={{ book.price }}$</p>
