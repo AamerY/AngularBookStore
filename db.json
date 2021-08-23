@@ -3,7 +3,7 @@
     {
       "title": "Angular",
       "price": "100967",
-      "stock": false,
+      "stock": true,
       "id": 1
     },
     {

@@ -14,6 +14,7 @@ import { FormComponent } from './components/form/form.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { ModalPopupComponent } from './modal-popup/modal-popup.component';
+import { ModalPopupShowComponent } from './modal-popup-show/modal-popup-show.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ModalPopupComponent } from './modal-popup/modal-popup.component';
     BookDetailComponent,
     ReactiveFormComponent,
     ModalPopupComponent,
+    ModalPopupShowComponent,
   ],
   imports: [
     BrowserModule,

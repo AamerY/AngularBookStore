@@ -1,13 +1,14 @@
 <div [ngClass]="{ stock: book.stock }" class="book">
-  <div (dblclick)="onBookToggle(book)">
-    <h3>{{ book.title | uppercase }}</h3>
-    <app-button
-      color="black"
-      text="Edit"
-      routerLink="/detail/{{ book.id }}"
-    ></app-button>
+  <div>
+    <div (click)="showPoUpDetails()">
+      <h3>{{ book.title | uppercase }}</h3>
+      <app-button
+        color="black"
+        text="Edit"
+        routerLink="/detail/{{ book.id }}"
+      ></app-button>
+    </div>
     <app-button color="red" text="Rmove" (click)="open(title)"></app-button>
   </div>
-
   <p *ngIf="showdetails">price={{ book.price }}$</p>
 </div>

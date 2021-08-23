@@ -9,6 +9,7 @@ import { Book } from '../../Book';
 import { Subscription } from 'rxjs';
 import { BookService } from '../../services/book.service';
 import { ModalPopupComponent } from '../../modal-popup/modal-popup.component';
+import { ModalPopupShowComponent } from '../../modal-popup-show/modal-popup-show.component';
 import {
   NgbModal,
   ModalDismissReasons,
@@ -20,44 +21,26 @@ import {
   templateUrl: './book-item.component.html',
   styleUrls: ['./book-item.component.css'],
 })
-export class BookItemComponent implements OnDestroy {
+export class BookItemComponent {
   showdetails: boolean = false;
   title = 'ModalPopupComponent';
 
   closeResult: any;
-  closeModal: string = '';
 
   @Input() book: Book = { title: '', price: '', stock: false };
   @Output() onDeleteBook: EventEmitter<Book> = new EventEmitter();
   @Output() onToggleStock: EventEmitter<Book> = new EventEmitter();
 
-  subscription: Subscription;
-
   constructor(
     private bookService: BookService,
     private modalService: NgbModal
-  ) {
-    this.subscription = this.bookService
-      .onToggle()
-      .subscribe((value: any) => (this.showdetails = value));
-  }
-
-  ngOnDestroy() {
-    // Unsubscribe to ensure no memory leaks
-    this.subscription.unsubscribe();
-  }
+  ) {}
 
   onDelete(book: Book) {
-   
-      this.onDeleteBook.emit(book);
-    }
-  
+    this.onDeleteBook.emit(book);
+  }
 
   onEdit(book: Book) {}
-
-  onToggle(book: Book) {
-    this.onToggleStock.emit(book);
-  }
 
   onBookToggle(book: Book) {
     // this.bookService.toggleBook();
@@ -86,57 +69,10 @@ export class BookItemComponent implements OnDestroy {
     }
   }
 
-  // open() {
-  //   const modalRef = this.modalService.open(ModalPopupComponent);
-  //   modalRef.componentInstance.my_modal_title = 'I your title';
-  //   modalRef.componentInstance.my_modal_content = 'I am your content';
-  // }
-
-  // private getDismissReason(reason: any): string {
-  //   if (reason === ModalDismissReasons.ESC) {
-  //     return 'by pressing ESC';
-  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  //     return 'by clicking on a backdrop';
-  //   } else {
-  //     return `with: ${reason}`;
-  //   }
-  // }
-
-  // open(content: any) {
-  //   this.modalService
-  //     .open(content, { ariaLabelledBy: 'modal-basic-title' })
-  //     .result.then(
-  //       (result) => {
-  //         this.closeResult = `Closed with: ${result}`;
-  //       },
-  //       (reason) => {
-  //         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  //       }
-  //     );
-  // }
-
-  // private getDismissReason(reason: any): string {
-  //   if (reason === ModalDismissReasons.ESC) {
-  //     return 'by pressing ESC';
-  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  //     return 'by clicking on a backdrop';
-  //   } else {
-  //     return `with: ${reason}`;
-  //   }
-  // }
-
-  // triggerModal(content: any) {
-  //   this.modalService
-  //     .open(content, { ariaLabelledBy: 'modal-basic-title' })
-  //     .result.then(
-  //       (res) => {
-  //         this.closeModal = `Closed with: ${res}`;
-  //       },
-  //       (res) => {
-  //         this.closeModal = `Dismissed ${this.getDismissReason(res)}`;
-  //       }
-  //     );
-  // }
-}  
-  
-
+  showPoUpDetails() {
+    const modalRef = this.modalService.open(ModalPopupShowComponent);
+    modalRef.componentInstance.my_modal_title = 'Book Title ' + this.book.title;
+    modalRef.componentInstance.my_modal_content =
+      'Price= ' + this.book.price + '$';
+  }
+}
