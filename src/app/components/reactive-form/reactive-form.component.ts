@@ -31,7 +31,7 @@ export class ReactiveFormComponent implements OnDestroy {
   profileForm = new FormGroup({
     title: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required),
-    stock: new FormControl(true),
+    stock: new FormControl(true, Validators.required),
   });
   constructor(
     private formService: FormService,
@@ -65,14 +65,9 @@ export class ReactiveFormComponent implements OnDestroy {
     };
 
     this.onAddBook.emit(newBook);
-
-    this.onReset();
+    this.profileForm.setValue({ title: '', price: '', stock: true });
+    this.submitted = false;
   }
 
   updateProfile() {}
-
-  onReset(): void {
-    this.submitted = false;
-    this.profileForm.reset();
-  }
 }
