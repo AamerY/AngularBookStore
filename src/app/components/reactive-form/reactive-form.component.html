@@ -3,24 +3,29 @@
   class="add-form"
   [formGroup]="profileForm"
   (ngSubmit)="onSubmit()"
- 
 >
- <div class="form">
-  <label for="title">Book Title: </label>
-  <input id="title"  type="text" formControlName="title" placeholder="Add Book Tiltle" />
-</div>
-<div class="form">
-  <label for="price">Price$: </label>
-  <input id="price" type="text" formControlName="price"  placeholder="Add Price$"/>
-</div>
-   <div class="form form-check">
+  <div class="form">
+    <label for="title">Book Title: </label>
+    <input
+      id="title"
+      type="text"
+      formControlName="title"
+      placeholder="Add Book Tiltle"
+    />
+  </div>
+  <div class="form">
+    <label for="price">Price$: </label>
+    <input
+      id="price"
+      type="text"
+      formControlName="price"
+      placeholder="Add Price$"
+    />
+  </div>
+  <div class="form form-check">
     <label for="stock">In stock</label>
     <input type="checkbox" name="stock" formControlName="stock" id="stock" />
   </div>
 
-
-
-
- <app-button color="green" text="Save" ></app-button>
-
+  <app-button color="green" text="Save"></app-button>
 </form>

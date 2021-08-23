@@ -1,10 +1,21 @@
 import { Component, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
+
 import { FormService } from '../../services/form.service';
 import { Subscription } from 'rxjs';
 import { Book } from '../../Book';
-import { Validators } from '@angular/forms';
+import { ModalPopupShowComponent } from '../../modal-popup-show/modal-popup-show.component';
+import { BookService } from '../../services/book.service';
+import {
+  NgbModal,
+  ModalDismissReasons,
+  NgbModalOptions,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-reactive-form',
@@ -22,7 +33,10 @@ export class ReactiveFormComponent implements OnDestroy {
     price: new FormControl('', Validators.required),
     stock: new FormControl(true),
   });
-  constructor(private formService: FormService) {
+  constructor(
+    private formService: FormService,
+    private modalService: NgbModal
+  ) {
     this.subscription = this.formService
       .onToggle()
       .subscribe((value: any) => (this.showForm = value));
@@ -36,8 +50,13 @@ export class ReactiveFormComponent implements OnDestroy {
   onSubmit() {
     this.submitted = true;
 
+    const modalRef = this.modalService.open(ModalPopupShowComponent);
+
     if (this.profileForm.invalid) {
-       alert('Please add a book title and price!');
+      modalRef.componentInstance.my_modal_title =
+        'Input Invalid!';
+      modalRef.componentInstance.my_modal_content =
+        'Please add a book title and price!';
       return;
     }
 
