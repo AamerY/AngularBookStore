@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalPopupComponent } from './modal-popup.component';
+import { ReactiveFormComponent } from './add-book-form.component';
 
-describe('ModalPopupComponent', () => {
-  let component: ModalPopupComponent;
-  let fixture: ComponentFixture<ModalPopupComponent>;
+describe('ReactiveFormComponent', () => {
+  let component: ReactiveFormComponent;
+  let fixture: ComponentFixture<ReactiveFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalPopupComponent ]
+      declarations: [ ReactiveFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalPopupComponent);
+    fixture = TestBed.createComponent(ReactiveFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

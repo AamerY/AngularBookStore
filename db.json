@@ -1,12 +1,6 @@
 {
   "books": [
     {
-      "title": "typescript",
-      "price": "50",
-      "stock": true,
-      "id": 4
-    },
-    {
       "title": "css",
       "price": "120",
       "stock": true,

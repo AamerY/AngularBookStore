@@ -18,9 +18,9 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-reactive-form',
-  templateUrl: './reactive-form.component.html',
-  styleUrls: ['./reactive-form.component.css'],
+  selector: 'app-add-book-form',
+  templateUrl: './add-book-form.component.html',
+  styleUrls: ['./add-book-form.component.css'],
 })
 export class ReactiveFormComponent implements OnDestroy {
   @Output() onAddBook: EventEmitter<Book> = new EventEmitter<Book>();

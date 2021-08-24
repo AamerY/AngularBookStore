@@ -8,7 +8,7 @@ import {
 import { Book } from '../../Book';
 import { Subscription } from 'rxjs';
 import { BookService } from '../../services/book.service';
-import { ModalPopupComponent } from '../../modal-popup/modal-popup.component';
+import { ModalPopupComponent } from '../../delete-modal-popup/delete-modal-popup.component';
 import { ModalPopupShowComponent } from '../../modal-popup-show/modal-popup-show.component';
 import {
   NgbModal,

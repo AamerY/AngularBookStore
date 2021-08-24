@@ -5,9 +5,9 @@ import { Location } from '@angular/common';
 
 import { BookService } from '../../services/book.service';
 @Component({
-  selector: 'app-book-detail',
-  templateUrl: './book-detail.component.html',
-  styleUrls: ['./book-detail.component.css'],
+  selector: 'app-edit-book-form',
+  templateUrl: './edit-book-form.component.html',
+  styleUrls: ['./edit-book-form.component.css'],
 })
 export class BookDetailComponent implements OnInit {
   book: Book | undefined;
