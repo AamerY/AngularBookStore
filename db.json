@@ -1,24 +1,6 @@
 {
   "books": [
     {
-      "title": "Angular",
-      "price": "100967",
-      "stock": true,
-      "id": 1
-    },
-    {
-      "title": "react",
-      "price": "50",
-      "stock": true,
-      "id": 2
-    },
-    {
-      "title": "javascript",
-      "price": "100",
-      "stock": true,
-      "id": 3
-    },
-    {
       "title": "typescript",
       "price": "50",
       "stock": true,
@@ -181,12 +163,6 @@
       "id": 35
     },
     {
-      "title": "78bt",
-      "price": "454",
-      "stock": true,
-      "id": 36
-    },
-    {
       "title": "dfbwyrjtyitu",
       "price": "346356",
       "stock": true,
@@ -197,6 +173,12 @@
       "price": "7684",
       "stock": true,
       "id": 38
+    },
+    {
+      "title": "qsxzxq",
+      "price": "qsxx",
+      "stock": true,
+      "id": 39
     }
   ]
 }

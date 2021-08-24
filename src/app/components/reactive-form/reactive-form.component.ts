@@ -28,7 +28,7 @@ export class ReactiveFormComponent implements OnDestroy {
   submitted: boolean = false;
   subscription: Subscription;
 
-  profileForm = new FormGroup({
+  bookForm = new FormGroup({
     title: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required),
     stock: new FormControl(true, Validators.required),
@@ -50,7 +50,7 @@ export class ReactiveFormComponent implements OnDestroy {
   onSubmit() {
     this.submitted = true;
 
-    if (this.profileForm.invalid) {
+    if (this.bookForm.invalid) {
       const modalRef = this.modalService.open(ModalPopupShowComponent);
       modalRef.componentInstance.my_modal_title = 'Input Invalid!';
       modalRef.componentInstance.my_modal_content =
@@ -59,13 +59,13 @@ export class ReactiveFormComponent implements OnDestroy {
     }
 
     const newBook = {
-      title: this.profileForm.controls['title'].value,
-      price: this.profileForm.controls['price'].value,
-      stock: this.profileForm.controls['stock'].value,
+      title: this.bookForm.controls['title'].value,
+      price: this.bookForm.controls['price'].value,
+      stock: this.bookForm.controls['stock'].value,
     };
 
     this.onAddBook.emit(newBook);
-    this.profileForm.setValue({ title: '', price: '', stock: true });
+    this.bookForm.setValue({ title: '', price: '', stock: true });
     this.submitted = false;
   }
 

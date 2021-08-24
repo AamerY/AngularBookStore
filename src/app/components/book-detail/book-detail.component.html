@@ -1,6 +1,6 @@
 <div *ngIf="book">
   <h2>Edit {{ book.title | uppercase }}</h2>
-  <div class="form"><span>id: </span>{{ book.id }}</div>
+  
   <div class="form">
     <label for="book">Book</label>
     <input [(ngModel)]="book.title" id="title" placeholder="Add Book Tiltle" />

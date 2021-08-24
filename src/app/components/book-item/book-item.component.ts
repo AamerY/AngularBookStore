@@ -56,6 +56,7 @@ export class BookItemComponent {
       (reason) => {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       }
+      
     );
   }
 
@@ -70,9 +71,16 @@ export class BookItemComponent {
   }
 
   showPoUpDetails() {
+    let isStock = '';
     const modalRef = this.modalService.open(ModalPopupShowComponent);
     modalRef.componentInstance.my_modal_title = this.book.title + ' Details';
+    if (this.book.stock) {
+      isStock = 'In Stock';
+    }
+    else{
+      isStock='out Stock';
+    }
     modalRef.componentInstance.my_modal_content =
-      'Price= ' + this.book.price + '$';
+      'Price= ' + this.book.price + '$ '+ isStock;
   }
 }
