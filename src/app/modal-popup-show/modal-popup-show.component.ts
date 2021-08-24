@@ -9,7 +9,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class ModalPopupShowComponent implements OnInit {
   @Input() my_modal_title: any;
   @Input() my_modal_content: any;
-
+  @Input() my_modal_footer: any;
   constructor(public activeModal: NgbActiveModal) {}
   ngOnInit(): void {}
 }

@@ -3,4 +3,5 @@ export interface Book {
   title: string;
   price: string;
   stock: boolean;
+  description:string;
 }

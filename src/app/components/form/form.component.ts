@@ -13,6 +13,7 @@ export class FormComponent implements OnDestroy {
   title: string = '';
   price: string = '';
   stock: boolean = true;
+  description: string = '';
   showForm: boolean = true;
   subscription: Subscription;
 
@@ -37,6 +38,7 @@ export class FormComponent implements OnDestroy {
       title: this.title,
       price: this.price,
       stock: this.stock,
+      description: this.description,
     };
 
     this.onAddBook.emit(newBook);
@@ -44,5 +46,6 @@ export class FormComponent implements OnDestroy {
     this.title = '';
     this.price = '';
     this.stock = true;
+    this.description = '';
   }
 }

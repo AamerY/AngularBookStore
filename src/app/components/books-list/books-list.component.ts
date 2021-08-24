@@ -40,6 +40,7 @@ export class BooksListComponent implements OnInit {
 
   addBook(book: Book) {
     // if (this.books.find(book.title))
+     let isStock = '';
     const found = this.books.find((element) => element.title === book.title);
     if (found) {
       const modalRef = this.modalService.open(ModalPopupShowComponent);
@@ -56,8 +57,14 @@ export class BooksListComponent implements OnInit {
       const modalRef = this.modalService.open(ModalPopupShowComponent);
       modalRef.componentInstance.my_modal_title =
         book.title + ' added successfully';
+      if (book.stock) {
+        isStock = 'In Stock';
+      } else {
+        isStock = 'Out Of Stock';
+      }
       modalRef.componentInstance.my_modal_content =
-        book.title + ' Price =' + book.price + '$';
+        'Price= ' + book.price + '$ ' + isStock ;
+         modalRef.componentInstance.my_modal_footer = book.description;
       return;
     }
   }

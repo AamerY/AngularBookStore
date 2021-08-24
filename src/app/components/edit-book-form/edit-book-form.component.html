@@ -1,6 +1,6 @@
 <div *ngIf="book">
   <h2>Edit {{ book.title | uppercase }}</h2>
-  
+
   <div class="form">
     <label for="book">Book</label>
     <input [(ngModel)]="book.title" id="title" placeholder="Add Book Tiltle" />
@@ -9,6 +9,14 @@
     <label for="price">Price$</label>
     <input name="price" [(ngModel)]="book.price" placeholder="Add Price$" />
   </div>
+
+  <div><label for="text-area">Description</label></div>
+  <textarea
+    id="description"
+    class="text-area"
+    [(ngModel)]="book.description" 
+  
+  ></textarea>
   <div class="form form-check">
     <label for="stock">In stock</label>
     <input type="checkbox" [(ngModel)]="book.stock" />

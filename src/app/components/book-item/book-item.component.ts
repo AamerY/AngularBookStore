@@ -27,7 +27,7 @@ export class BookItemComponent {
 
   closeResult: any;
 
-  @Input() book: Book = { title: '', price: '', stock: false };
+  @Input() book: Book = { title: '', price: '', stock: false, description: '' };
   @Output() onDeleteBook: EventEmitter<Book> = new EventEmitter();
   @Output() onToggleStock: EventEmitter<Book> = new EventEmitter();
 
@@ -56,7 +56,6 @@ export class BookItemComponent {
       (reason) => {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       }
-      
     );
   }
 
@@ -76,11 +75,11 @@ export class BookItemComponent {
     modalRef.componentInstance.my_modal_title = this.book.title + ' Details';
     if (this.book.stock) {
       isStock = 'In Stock';
-    }
-    else{
-      isStock='out Stock';
+    } else {
+      isStock = 'Out Of Stock';
     }
     modalRef.componentInstance.my_modal_content =
-      'Price= ' + this.book.price + '$ '+ isStock;
+        this.book.price + '$ ' + isStock;
+    modalRef.componentInstance.my_modal_footer = this.book.description;
   }
 }
