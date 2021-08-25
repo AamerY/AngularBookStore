@@ -4,7 +4,8 @@
       "title": "SQL",
       "price": "60",
       "stock": true,
-      "id": 9
+      "id": 9,
+      "description": "cwcdwdvwdv"
     },
     {
       "title": "ad",
@@ -19,18 +20,6 @@
       "id": 12
     },
     {
-      "title": "aamer",
-      "price": "98",
-      "stock": true,
-      "id": 13
-    },
-    {
-      "title": "titlerb",
-      "price": "pricebth",
-      "stock": false,
-      "id": 14
-    },
-    {
       "title": "Aamer",
       "price": "4522",
       "stock": true,
@@ -42,6 +31,27 @@
       "stock": true,
       "description": "dmfg`smg`s",
       "id": 32
+    },
+    {
+      "title": "wc1c",
+      "price": "wecec",
+      "stock": false,
+      "description": "1ce3ce",
+      "id": 33
+    },
+    {
+      "title": "az",
+      "price": "sq",
+      "stock": true,
+      "description": "",
+      "id": 34
+    },
+    {
+      "title": "sx",
+      "price": "sx",
+      "stock": true,
+      "description": "xsx",
+      "id": 35
     }
   ]
 }
